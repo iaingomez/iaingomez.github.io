@@ -1,4 +1,7 @@
 
+// other themes to add ?
+// bigger memory?
+
 var library = {
 Social: [
     'https://cdn3.iconfinder.com/data/icons/glypho-social-and-other-logos/64/logo-facebook-512.png',
@@ -64,7 +67,7 @@ function activateTheme(theme) {
 }
 
 
-
+// Handle the play
 mainElt.addEventListener("click", gameLogic);
 
 function gameLogic(e) {
@@ -84,7 +87,7 @@ function gameLogic(e) {
       click = 1;
     }
 
-    
+    // second click
     else if (e.target !== tempElt1) {
       tempElt2 = e.target;
 
@@ -102,7 +105,7 @@ function gameLogic(e) {
         scoreElt.innerHTML = score;
       }
 
-      
+      // same images
       else {
         score += 10;
         win += 2;
@@ -112,7 +115,7 @@ function gameLogic(e) {
         tempElt2.classList.remove("play");
         scoreElt.innerHTML = score;
 
-        
+        // game won
         if (win === 20) {
           clearInterval(timer);
           finalElt.innerHTML = "You won " + score + " points <br> in " + time + " seconds";
@@ -143,4 +146,5 @@ function resetGame() {
   timeElt.textContent = time;
   scoreElt.textContent = score;
 }
+
 
