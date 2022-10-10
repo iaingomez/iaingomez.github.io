@@ -1,7 +1,3 @@
-
-// other themes to add ?
-// bigger memory?
-
 var library = {
 Social: [
     'https://cdn3.iconfinder.com/data/icons/glypho-social-and-other-logos/64/logo-facebook-512.png',
@@ -46,7 +42,6 @@ var finalElt = document.querySelector("#final");
 var againElt = document.querySelector("#again");
 
 
-// initiate the game with chosen theme
 themesElt.addEventListener("click", function(e) {
   if (e.target.classList.contains("themes")) {
     activateTheme(e.target.id);
@@ -56,9 +51,9 @@ themesElt.addEventListener("click", function(e) {
 
 
 function activateTheme(theme) {
-  // insert theme in images array
+ 
   for (let i = 0; i < 20; i++) {images.push(library[theme][i]);}  
-  // insert images in memory game
+
   for (let i = 0; i < 20; i++) {
     var rand = Math.floor(Math.random() * (images.length - 1));
     boxElts[i].innerHTML = "<img src='" + images[rand] + "' alt='image' class='hidden'>";
@@ -67,11 +62,11 @@ function activateTheme(theme) {
 }
 
 
-// Handle the play
+
 mainElt.addEventListener("click", gameLogic);
 
 function gameLogic(e) {
-  // make sure the box is playable
+
   if (e.target.classList.contains("play")) {
     e.target.firstChild.classList.remove("hidden");
     // first of two click
@@ -87,11 +82,11 @@ function gameLogic(e) {
       click = 1;
     }
 
-    // second click
+    
     else if (e.target !== tempElt1) {
       tempElt2 = e.target;
 
-      // different images
+  
       if (tempElt1.firstChild.src !== tempElt2.firstChild.src) {
         mainElt.removeEventListener("click", gameLogic);
         setTimeout( function() {
@@ -105,7 +100,7 @@ function gameLogic(e) {
         scoreElt.innerHTML = score;
       }
 
-      // same images
+    
       else {
         score += 10;
         win += 2;
@@ -115,7 +110,7 @@ function gameLogic(e) {
         tempElt2.classList.remove("play");
         scoreElt.innerHTML = score;
 
-        // game won
+       
         if (win === 20) {
           clearInterval(timer);
           finalElt.innerHTML = "You won " + score + " points <br> in " + time + " seconds";
@@ -146,14 +141,3 @@ function resetGame() {
   timeElt.textContent = time;
   scoreElt.textContent = score;
 }
-
-// handle focus of the page
-// function checkPageFocus() {
-//   if (document.hasFocus()) {
-//     preElt.classList.remove("hidden");
-//   }
-//   else {
-//     preElt.classList.add("hidden");
-//   }
-// }
-// var checkPageInterval = setInterval(checkPageFocus, 300);
