@@ -10,8 +10,8 @@ body {
   justify-content: space-between;
   align-items: center;
   min-height: 100vh;
-  background: #626363;
-  background-image: linear-gradient(to top left, #4d2f58, #a2a7a6);
+  background: #31d3d3;
+  background-image: linear-gradient(to top left, #545ee6, #2ddfbb);
   font-family: arial;
   position: relative;
   text-align: center;
@@ -44,7 +44,7 @@ header {
 
 /* main SECTION */
 .main {
-  background: white;
+  background: rgb(62, 112, 134);
   width: 250px;
 /*   height: 345px; */
   padding-bottom: 10px;
@@ -71,7 +71,7 @@ header {
 }
 
 .box {
-  background: #6186aa;
+  background: #8ec3f8;
   width: 50px;
   height: 50px;
   float: left;
@@ -104,7 +104,7 @@ header {
 
 /* STATUS bar */
 #state {
-  background: #4fe970;
+  background: #666f97;
 /*   background-image: linear-gradient(to top left, #9b59b6, #1abc9c); */
   background-size: 250%;
   width: 230px;
